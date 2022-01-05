@@ -6,6 +6,8 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvCalcTask;
     private EditText etUserInput;
 
-
+    private Button btn;
 
     private String ans;
 
@@ -30,7 +32,20 @@ public class MainActivity extends AppCompatActivity {
 
         ans = "30";
 
-        final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding2);
+        final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
+
+        btn = findViewById(R.id.button);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (dingSound.isPlaying()) {
+                    dingSound.seekTo(0);
+                } else {
+                    dingSound.start();
+                }
+            }
+        });
 
         etUserInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -47,8 +62,13 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 if (editable.toString().equals(ans)) {
                     editable.clear();
-                    System.out.println("Correct!");
-                    dingSound.start();
+
+                    if (dingSound.isPlaying()) {
+                        dingSound.seekTo(0);
+                    } else {
+                        dingSound.start();
+                    }
+
                     updateCalcTask();
                 }
             }

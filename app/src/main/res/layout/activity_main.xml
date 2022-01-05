@@ -27,4 +27,9 @@
         android:id="@+id/etUserInput"
         android:inputType="numberDecimal" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button" />
+
 </RelativeLayout>
