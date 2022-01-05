@@ -15,7 +15,7 @@
         android:text="5 * 6"
         android:layout_centerInParent="true"
         android:textSize="40dp"
-        android:layout_marginBottom="75dp" />
+        android:layout_marginBottom="75dp"/>
 
 
     <EditText
@@ -25,11 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:id="@+id/etUserInput"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button" />
+        android:id="@+id/button"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/etUserInput"
+        android:layout_marginTop="200dp"/>
 
 </RelativeLayout>
