@@ -2,6 +2,7 @@ package com.example.speedcalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvCalcTask;
     private EditText etUserInput;
 
+
+
     private String ans;
 
     @Override
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         etUserInput = findViewById(R.id.etUserInput);
 
         ans = "30";
+
+        final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding2);
 
         etUserInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -43,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 if (editable.toString().equals(ans)) {
                     editable.clear();
                     System.out.println("Correct!");
+                    dingSound.start();
                     updateCalcTask();
                 }
             }
