@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String ans;
 
+    private long tries;
+    private long maxTries = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         etUserInput = findViewById(R.id.etUserInput);
 
         ans = "30";
+        tries = 0;
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
 
@@ -60,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                // I'll change the activity and show the history of all tasks
+                // if (tries > maxTries) { 
+                //     return;
+                // }
+
                 if (editable.toString().equals(ans)) {
                     editable.clear();
 
@@ -70,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     updateCalcTask();
+                    ++tries;
                 }
             }
         });
