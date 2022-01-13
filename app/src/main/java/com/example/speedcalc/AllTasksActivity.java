@@ -11,6 +11,11 @@ public class AllTasksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_tasks);
         
+        ArayList<Expression> expressions = new ArrayList<>();
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            expressions = extras.get
         onShowTaskHistory();
     }
 
