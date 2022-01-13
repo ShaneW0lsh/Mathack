@@ -6,7 +6,7 @@ public class Expression {
     private String answer;
     private String fVal, sVal;
 
-    public Experission(String fVal, String sVal, String operation) {
+    public Expression(String fVal, String sVal, String operation) {
         this.fVal = fVal;
         this.sVal = sVal;
         this.operation = operation;
