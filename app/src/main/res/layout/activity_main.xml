@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:paddingHorizontal="50dp">
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtScore"
+        android:layout_above="@+id/tvCalcTask"
+        android:layout_toRightOf="@+id/etUserInput"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="90dp"
+        android:layout_marginRight="10dp"
+        android:textSize="40dp"
+        android:textColor="#64fcbd"/>
 
     <TextView
         android:layout_width="wrap_content"

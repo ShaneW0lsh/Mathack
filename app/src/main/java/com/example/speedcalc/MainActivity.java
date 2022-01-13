@@ -2,6 +2,7 @@ package com.example.speedcalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
@@ -17,21 +18,21 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tvCalcTask;
     private EditText etUserInput;
+    private TextView txtScore;
 
     private Button btn;
 
     private String ans;
 
     private long score;
-    private long maxScore = 10;
+    private long maxScore = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvCalcTask = findViewById(R.id.tvCalcTask);
-        etUserInput = findViewById(R.id.etUserInput);
+        initViews();
 
         ans = "30";
         score = 0;
@@ -64,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                // I'll change the activity and show the history of all tasks
-                // if (tries > maxTries) { 
-                //     return;
-                // }
-
                 if (editable.toString().equals(ans)) {
                     editable.clear();
 
@@ -78,22 +74,36 @@ public class MainActivity extends AppCompatActivity {
                         dingSound.start();
                     }
 
-                    updateCalcTask();
                     ++score;
+                    txtScore.setText(Long.toString(score));
+                    updateCalcTask();
+
+                    if (score == maxScore) {
+                        // change current activity
+                        Intent intent = new Intent(MainActivity.this, AllTasksActivity.class);
+                        score = 0;
+                        startActivity(intent);
+                    }
                 }
             }
         });
     }
 
+    private void initViews() {
+        tvCalcTask = findViewById(R.id.tvCalcTask);
+        etUserInput = findViewById(R.id.etUserInput);
+        txtScore = findViewById(R.id.txtScore);
+    }
+
     private void updateCalcTask() {
-        int upperbound = 25;
+        int upperbound = 10;
         Random rand = new Random();
 
         int first = rand.nextInt(upperbound);
         int second = rand.nextInt(upperbound);
         int updAnsInt = first * second;
 
-        Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul");
+        Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul", Integer.toString(updAnsInt));
         DataHolder.addData(cExpr);
 
         String updAnsStr = Integer.toString(updAnsInt);

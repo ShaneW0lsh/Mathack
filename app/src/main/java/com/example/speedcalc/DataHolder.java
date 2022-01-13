@@ -3,7 +3,7 @@ package com.example.speedcalc;
 import java.util.ArrayList;
 
 public class DataHolder {
-    private static ArrayList<Expression> data;
+    private static ArrayList<Expression> data = new ArrayList<>();
     
     private static final DataHolder holder = new DataHolder();
     public static DataHolder getInstance() {
@@ -19,6 +19,8 @@ public class DataHolder {
     }
 
     public static void clearData() {
-        data.clear();
+        if (data != null) {
+            data.clear();
+        }
     }
 }
