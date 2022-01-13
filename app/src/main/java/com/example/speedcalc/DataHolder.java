@@ -1,18 +1,24 @@
 package com.example.speedcalc;
 
+import java.util.ArrayList;
+
 public class DataHolder {
-    private ArrayList<Expression> data;
+    private static ArrayList<Expression> data;
     
     private static final DataHolder holder = new DataHolder();
     public static DataHolder getInstance() {
-        return this.holder;
+        return holder;
     }
 
-    public ArrayList<Expression> getData() {
-        return this.data;
+    public static ArrayList<Expression> getData() {
+        return data;
     }
 
-    public void addData(Expression expr) {
-        this.data.add(expr);
+    public static void addData(Expression expr) {
+        data.add(expr);
+    }
+
+    public static void clearData() {
+        data.clear();
     }
 }

@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String ans;
 
-    private long tries;
-    private long maxTries = 10;
+    private long score;
+    private long maxScore = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         etUserInput = findViewById(R.id.etUserInput);
 
         ans = "30";
-        tries = 0;
+        score = 0;
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     updateCalcTask();
-                    ++tries;
+                    ++score;
                 }
             }
         });
@@ -92,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
         int first = rand.nextInt(upperbound);
         int second = rand.nextInt(upperbound);
         int updAnsInt = first * second;
+
+        Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul");
+        DataHolder.addData(cExpr);
 
         String updAnsStr = Integer.toString(updAnsInt);
         this.ans = updAnsStr;

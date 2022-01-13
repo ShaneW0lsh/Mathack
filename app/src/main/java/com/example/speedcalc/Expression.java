@@ -16,8 +16,8 @@ public class Expression {
         return this.answer;
     }
 
-    public String[] getValues() {
-        String[] ret = {this.fVal, this.sVal};
+    public String toString() {
+        String ret = fVal + ' ' + operation + ' ' + sVal;
         return ret;
     }
 }
