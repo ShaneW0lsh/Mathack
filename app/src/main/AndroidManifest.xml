@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SpeedCalc">
         <activity
-            android:name=".AllTasksActivity"
+            android:name=".TaskSessionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TaskHistoryActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

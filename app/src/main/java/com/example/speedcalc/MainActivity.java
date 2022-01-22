@@ -1,31 +1,15 @@
 package com.example.speedcalc;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import java.util.Random;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvCalcTask;
-    private EditText etUserInput;
-    private TextView txtScore;
-
-    private Button btn;
-
-    private String ans;
-
-    private long score;
-    private long maxScore = 20;
+    Button btnStart, bntSettings, btnExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,84 +18,32 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
-        ans = "30";
-        score = 0;
-
-        final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
-
-        btn = findViewById(R.id.button);
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (dingSound.isPlaying()) {
-                    dingSound.seekTo(0);
-                } else {
-                    dingSound.start();
-                }
+                Intent intent = new Intent(MainActivity.this, TaskSessionActivity.class);
+                startActivity(intent);
             }
         });
 
-        etUserInput.addTextChangedListener(new TextWatcher() {
+        bntSettings.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            public void onClick(View view) {
+                //does nothing for now
             }
+        });
 
+        btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if (editable.toString().equals(ans)) {
-                    editable.clear();
-
-                    if (dingSound.isPlaying()) {
-                        dingSound.seekTo(0);
-                    } else {
-                        dingSound.start();
-                    }
-
-                    ++score;
-                    txtScore.setText(Long.toString(score));
-                    updateCalcTask();
-
-                    if (score == maxScore) {
-                        // change current activity
-                        Intent intent = new Intent(MainActivity.this, AllTasksActivity.class);
-                        score = 0;
-                        startActivity(intent);
-                    }
-                }
+            public void onClick(View view) {
+                //does nothing for now
             }
         });
     }
 
     private void initViews() {
-        tvCalcTask = findViewById(R.id.tvCalcTask);
-        etUserInput = findViewById(R.id.etUserInput);
-        txtScore = findViewById(R.id.txtScore);
-    }
-
-    private void updateCalcTask() {
-        int upperbound = 10;
-        Random rand = new Random();
-
-        int first = rand.nextInt(upperbound);
-        int second = rand.nextInt(upperbound);
-        int updAnsInt = first * second;
-
-        Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul", Integer.toString(updAnsInt));
-        DataHolder.addData(cExpr);
-
-        String updAnsStr = Integer.toString(updAnsInt);
-        this.ans = updAnsStr;
-        System.out.println(this.ans);
-
-        String toSet = first + " * " + second;
-
-        tvCalcTask.setText(toSet);
+        btnStart = findViewById(R.id.btnStart);
+        bntSettings = findViewById(R.id.btnSettings);
+        btnExit = findViewById(R.id.btnExit);
     }
 }
