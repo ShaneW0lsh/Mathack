@@ -24,6 +24,8 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private String ans;
 
+    Random rand;
+
     private long score;
     private long maxScore = 5;
 
@@ -32,26 +34,23 @@ public class TaskSessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_session);
 
-        initViews();
+        initVariables();
 
-        ans = "30";
-        score = 0;
+
+        // btn = findViewById(R.id.button);
+
+        // btn.setOnClickListener(new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View view) {
+        //         if (dingSound.isPlaying()) {
+        //             dingSound.seekTo(0);
+        //         } else {
+        //             dingSound.start();
+        //         }
+        //     }
+        // });
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
-
-        btn = findViewById(R.id.button);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (dingSound.isPlaying()) {
-                    dingSound.seekTo(0);
-                } else {
-                    dingSound.start();
-                }
-            }
-        });
-
         etUserInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -90,29 +89,47 @@ public class TaskSessionActivity extends AppCompatActivity {
         });
     }
 
+    private void initVariables() {
+        rand = new Random();
+        ans = "30";
+        score = 0;
+        maxScore = 5
+
+        initViews();
+    }
+
     private void initViews() {
         tvCalcTask = findViewById(R.id.tvCalcTask);
         etUserInput = findViewById(R.id.etUserInput);
         txtScore = findViewById(R.id.txtScore);
     }
 
-    private void updateCalcTask() {
-        int upperbound = 10;
-        Random rand = new Random();
+    private void generateOperation() {
+        
+    }
 
-        int first = rand.nextInt(upperbound);
-        int second = rand.nextInt(upperbound);
-        int updAnsInt = first * second;
+    private void generateOperands() { 
+
+    }
+
+    private void updateCalcTask() {
+        int maxOperationNumber = 4;
+        int operation = rand.nextInt(4);
+
+        int upperbound = 10;
+
+        int first = rand.nextInt(upperbound), 
+            second = rand.nextInt(upperbound), 
+            updAnsInt = first * second;
 
         Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul", Integer.toString(updAnsInt));
-        DataHolder.addData(cExpr);
+        DataHolder.getInstance().addData(cExpr);
 
         String updAnsStr = Integer.toString(updAnsInt);
         this.ans = updAnsStr;
         System.out.println(this.ans);
 
         String toSet = first + " * " + second;
-
         tvCalcTask.setText(toSet);
     }
 }
