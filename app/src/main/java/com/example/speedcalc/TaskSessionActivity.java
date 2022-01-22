@@ -27,7 +27,8 @@ public class TaskSessionActivity extends AppCompatActivity {
     Random rand;
 
     private long score;
-    private long maxScore = 5;
+    private long maxScore;
+    private int maxOperationAvailable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +94,8 @@ public class TaskSessionActivity extends AppCompatActivity {
         rand = new Random();
         ans = "30";
         score = 0;
-        maxScore = 5
+        maxScore = 5;
+        maxOperationsAvailable = 4;
 
         initViews();
     }
@@ -104,17 +106,35 @@ public class TaskSessionActivity extends AppCompatActivity {
         txtScore = findViewById(R.id.txtScore);
     }
 
-    private void generateOperation() {
+    // private int generateOperation() {
         
-    }
+    // }
 
-    private void generateOperands() { 
+    // private void generateOperands() { 
 
+    // }
+    
+    //TODO
+    //finish this
+    private Expression generateExpression() {
+        Expression expr = new Expression();
+
+        int operation = rand.nextInt(maxOperationsAvailable);
+        switch(operation) {
+            case 0:
+                
+            case 1:
+            case 3:
+            case 4:
+        }
+
+        expr.create(fVal, sVal, operation, answer);
+        return expr;
     }
 
     private void updateCalcTask() {
-        int maxOperationNumber = 4;
-        int operation = rand.nextInt(4);
+        Expression expression = generateExpression();
+
 
         int upperbound = 10;
 

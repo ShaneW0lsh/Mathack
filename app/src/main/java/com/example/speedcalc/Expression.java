@@ -13,6 +13,16 @@ public class Expression {
         this.answer = answer;
     }
 
+    public Expression() {};
+
+    public create(String fVal, String sVal, String operation, String answer) {
+        this.fVal = fVal;
+        this.sVal = sVal;
+        this.operation = operation;
+        this.answer = answer;
+    }
+
+
     public String getAnswer() {
         return this.answer;
     }
