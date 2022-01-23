@@ -10,7 +10,10 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class TaskSessionActivity extends AppCompatActivity {
@@ -27,7 +30,7 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private long score;
     private long maxScore;
-    private int maxOperationAvailable;
+    private int maxOperationsAvailable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,55 +109,78 @@ public class TaskSessionActivity extends AppCompatActivity {
     }
     
     //TODO
+    //generate divisors()
     //finish this
+    // there is an error somewhere here
     private Expression generateExpression() {
         Expression expr = new Expression();
 
         int operationInt = rand.nextInt(maxOperationsAvailable);
         long answer;
-        String operationStr;
+        String operationStr = "";
+        ArrayList<Integer> operands = new ArrayList<>();
+        System.out.println("before worked switch");
         switch(operationInt) {
             case 0:
                 operationStr = "+"; 
-                int[2] operands = generateOperands(300);
-                answer = operands[0] + operands[1];
+                generateOperands(300, false, operands);
+                answer = operands.get(0) + operands.get(1);
+                break;
             case 1:
                 operationStr = "-"; 
-                int[2] operands = generateOperands(300);
-                answer = operands[0] - operands[1];
+                generateOperands(300, false, operands);
+                answer = operands.get(0) + operands.get(1);
+                break;
             case 2:
                 operationStr = "*"; 
-                int[2] operands = generateOperands(26);
-                answer = operands[0] * operands[1];
+                generateOperands(26, false, operands);
+                answer = operands.get(0) + operands.get(1);
+                break;
             case 3:
                 operationStr = ":"; 
-                int[2] operands = generateOperands(300, true);
-                answer = operands[0] / operands[1];
+                generateOperands(200, true, operands);
+                answer = operands.get(0) + operands.get(1);
+                break;
+            default:
+                Toast.makeText(this, "error in 'generateExpression()' method", Toast.LENGTH_LONG).show();
+                generateOperands(26, false, operands);
+                answer = 0;
         }
+        System.out.println("worked after switch");
 
-        expr.create(String.valueOf(operands[0]), String.valueOf(operands[1]), operationStr, String.valueOf(answer));
+        expr.create(String.valueOf(operands.get(0)), String.valueOf(operands.get(1)), operationStr, String.valueOf(answer));
+        System.out.println("method 'generateExpression()' works as expected");
         return expr;
     }
 
-    private int[2] generateOperands(int upperBound, boolean isDivisible = false) {
-        int[2] ret;
+    private void generateOperands(int upperBound, boolean isDivisible, ArrayList<Integer> operands) {
+        //TODO: do here the same 
+        ArrayList<Integer> divisors = new ArrayList<>();
 
-        ret[0] = random.nextInt(upperBound);
+        operands.add(rand.nextInt(upperBound));
         
         if (isDivisible) {
-            while (true) {
-                ret[1] = random.nextInt(ret[0] + 1);
-                if (ret[1] != 0 and ret[0] % ret[1] == 0) {
-                    break;
-                }
-                System.out.println(ret[0] + ' ' + ret[1]);
-            }
+            generateDivisors(operands.get(0), divisors);
+            int idx = rand.nextInt(divisors.size());
+            operands.add(divisors.get(idx));
         } else {
-            ret[1] = random.nextInt(upperBound);
+            operands.add(rand.nextInt(upperBound));
+        }
+    }
+
+    private ArrayList<Integer> generateDivisors(int num, ArrayList<Integer> divisors) {
+        for (int i = 1; i * i <= num; ++i) {
+            if (num % i == 0) {
+                divisors.add(i);
+                if (num / i != i) {
+                    divisors.add(num / i);
+                }
+            }
         }
 
-        return ret;
+        return divisors;
     }
+
 
     private void updateCalcTask() {
         Expression expression = generateExpression();
