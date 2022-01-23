@@ -38,12 +38,4 @@
         android:id="@+id/etUserInput"
         android:inputType="numberDecimal"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/etUserInput"
-        android:layout_marginTop="200dp"/>
-
 </RelativeLayout>

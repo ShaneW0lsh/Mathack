@@ -35,7 +35,8 @@ public class Expression {
 
     public String toString() {
         //TODO: rewrite this in fstring way 
-        String ret = fVal + ' ' + operation + ' ' + sVal + " = " + answer;
+        // String ret = fVal + ' ' + operation + ' ' + sVal + " = " + answer;
+        String ret = fVal + ' ' + operation + ' ' + sVal;
         return ret;
     }
 }

@@ -22,8 +22,6 @@ public class TaskSessionActivity extends AppCompatActivity {
     private EditText etUserInput;
     private TextView txtScore;
 
-    private Button btn;
-
     private String ans;
 
     Random rand;
@@ -38,20 +36,6 @@ public class TaskSessionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_session);
 
         initVariables();
-
-
-        // btn = findViewById(R.id.button);
-
-        // btn.setOnClickListener(new View.OnClickListener() {
-        //     @Override
-        //     public void onClick(View view) {
-        //         if (dingSound.isPlaying()) {
-        //             dingSound.seekTo(0);
-        //         } else {
-        //             dingSound.start();
-        //         }
-        //     }
-        // });
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
         etUserInput.addTextChangedListener(new TextWatcher() {
@@ -129,17 +113,17 @@ public class TaskSessionActivity extends AppCompatActivity {
             case 1:
                 operationStr = "-"; 
                 generateOperands(300, false, operands);
-                answer = operands.get(0) + operands.get(1);
+                answer = operands.get(0) - operands.get(1);
                 break;
             case 2:
                 operationStr = "*"; 
                 generateOperands(26, false, operands);
-                answer = operands.get(0) + operands.get(1);
+                answer = operands.get(0) * operands.get(1);
                 break;
             case 3:
                 operationStr = ":"; 
                 generateOperands(200, true, operands);
-                answer = operands.get(0) + operands.get(1);
+                answer = operands.get(0) / operands.get(1);
                 break;
             default:
                 Toast.makeText(this, "error in 'generateExpression()' method", Toast.LENGTH_LONG).show();
@@ -184,22 +168,14 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private void updateCalcTask() {
         Expression expression = generateExpression();
+        this.ans = expression.getAnswer();
 
+        // Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul", Integer.toString(updAnsInt));
+        DataHolder.getInstance().addData(expression);
 
-        int upperbound = 10;
-
-        int first = rand.nextInt(upperbound), 
-            second = rand.nextInt(upperbound), 
-            updAnsInt = first * second;
-
-        Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul", Integer.toString(updAnsInt));
-        DataHolder.getInstance().addData(cExpr);
-
-        String updAnsStr = Integer.toString(updAnsInt);
-        this.ans = updAnsStr;
-        System.out.println(this.ans);
-
-        String toSet = first + " * " + second;
+        String toSet = expression.toString();
         tvCalcTask.setText(toSet);
+
+        System.out.println(this.ans);
     }
 }
