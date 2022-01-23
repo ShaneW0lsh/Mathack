@@ -38,6 +38,9 @@ public class TaskSessionActivity extends AppCompatActivity {
         initVariables();
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
+
+        updateCalcTask();
+
         etUserInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -65,8 +68,6 @@ public class TaskSessionActivity extends AppCompatActivity {
                     updateCalcTask();
 
                     if (score == maxScore) {
-                        // change current activity
-                        System.out.println("worked 2+222");
                         Intent intent = new Intent(TaskSessionActivity.this, TaskHistoryActivity.class);
                         score = 0;
                         startActivity(intent);
@@ -78,9 +79,8 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private void initVariables() {
         rand = new Random();
-        ans = "30";
         score = 0;
-        maxScore = 5;
+        maxScore = 20;
         maxOperationsAvailable = 4;
 
         initViews();
@@ -92,10 +92,6 @@ public class TaskSessionActivity extends AppCompatActivity {
         txtScore = findViewById(R.id.txtScore);
     }
     
-    //TODO
-    //generate divisors()
-    //finish this
-    // there is an error somewhere here
     private Expression generateExpression() {
         Expression expr = new Expression();
 
@@ -103,7 +99,6 @@ public class TaskSessionActivity extends AppCompatActivity {
         long answer;
         String operationStr = "";
         ArrayList<Integer> operands = new ArrayList<>();
-        System.out.println("before worked switch");
         switch(operationInt) {
             case 0:
                 operationStr = "+"; 
@@ -130,15 +125,12 @@ public class TaskSessionActivity extends AppCompatActivity {
                 generateOperands(26, false, operands);
                 answer = 0;
         }
-        System.out.println("worked after switch");
 
         expr.create(String.valueOf(operands.get(0)), String.valueOf(operands.get(1)), operationStr, String.valueOf(answer));
-        System.out.println("method 'generateExpression()' works as expected");
         return expr;
     }
 
     private void generateOperands(int upperBound, boolean isDivisible, ArrayList<Integer> operands) {
-        //TODO: do here the same 
         ArrayList<Integer> divisors = new ArrayList<>();
 
         operands.add(rand.nextInt(upperBound));
@@ -165,12 +157,10 @@ public class TaskSessionActivity extends AppCompatActivity {
         return divisors;
     }
 
-
     private void updateCalcTask() {
         Expression expression = generateExpression();
         this.ans = expression.getAnswer();
 
-        // Expression cExpr = new Expression(Integer.toString(first), Integer.toString(second), "mul", Integer.toString(updAnsInt));
         DataHolder.getInstance().addData(expression);
 
         String toSet = expression.toString();
