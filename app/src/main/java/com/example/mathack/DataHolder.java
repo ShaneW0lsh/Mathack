@@ -1,4 +1,4 @@
-package com.example.speedcalc;
+package com.example.mathack;
 
 import java.util.ArrayList;
 

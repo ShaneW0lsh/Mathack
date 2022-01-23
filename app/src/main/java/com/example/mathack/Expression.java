@@ -1,4 +1,4 @@
-package com.example.speedcalc;
+package com.example.mathack;
 
 public class Expression {
     private String operation;
@@ -12,10 +12,16 @@ public class Expression {
         this.operation = operation;
         this.answer = answer;
     }
+    // public Expression(String[] operands, String operation, String answer) {
+    //     this.fVal = operands[0];
+    //     this.sVal = operands[1];
+    //     this.operation = operation;
+    //     this.answer = answer;
+    // }
 
     public Expression() {};
 
-    public create(String fVal, String sVal, String operation, String answer) {
+    public void create(String fVal, String sVal, String operation, String answer) {
         this.fVal = fVal;
         this.sVal = sVal;
         this.operation = operation;
@@ -28,6 +34,7 @@ public class Expression {
     }
 
     public String toString() {
+        //TODO: rewrite this in fstring way 
         String ret = fVal + ' ' + operation + ' ' + sVal + " = " + answer;
         return ret;
     }

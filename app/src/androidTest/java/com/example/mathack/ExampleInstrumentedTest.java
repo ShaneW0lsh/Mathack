@@ -1,4 +1,4 @@
-package com.example.speedcalc;
+package com.example.mathack;
 
 import android.content.Context;
 

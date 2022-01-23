@@ -1,4 +1,4 @@
-package com.example.speedcalc;
+package com.example.mathack;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -105,31 +104,56 @@ public class TaskSessionActivity extends AppCompatActivity {
         etUserInput = findViewById(R.id.etUserInput);
         txtScore = findViewById(R.id.txtScore);
     }
-
-    // private int generateOperation() {
-        
-    // }
-
-    // private void generateOperands() { 
-
-    // }
     
     //TODO
     //finish this
     private Expression generateExpression() {
         Expression expr = new Expression();
 
-        int operation = rand.nextInt(maxOperationsAvailable);
-        switch(operation) {
+        int operationInt = rand.nextInt(maxOperationsAvailable);
+        long answer;
+        String operationStr;
+        switch(operationInt) {
             case 0:
-                
+                operationStr = "+"; 
+                int[2] operands = generateOperands(300);
+                answer = operands[0] + operands[1];
             case 1:
+                operationStr = "-"; 
+                int[2] operands = generateOperands(300);
+                answer = operands[0] - operands[1];
+            case 2:
+                operationStr = "*"; 
+                int[2] operands = generateOperands(26);
+                answer = operands[0] * operands[1];
             case 3:
-            case 4:
+                operationStr = ":"; 
+                int[2] operands = generateOperands(300, true);
+                answer = operands[0] / operands[1];
         }
 
-        expr.create(fVal, sVal, operation, answer);
+        expr.create(String.valueOf(operands[0]), String.valueOf(operands[1]), operationStr, String.valueOf(answer));
         return expr;
+    }
+
+    private int[2] generateOperands(int upperBound, boolean isDivisible = false) {
+        int[2] ret;
+
+        ret[0] = random.nextInt(upperBound);
+        
+        if (isDivisible) {
+            while (true) {
+                ret[1] = random.nextInt(ret[0] + 1);
+                if (ret[1] != 0 and ret[0] % ret[1] == 0) {
+                    break;
+                }
+                System.out.println(ret[0] + ' ' + ret[1]);
+            }
+        } else {
+            ret[1] = random.nextInt(upperBound);
+        }
+
+        return ret;
     }
 
     private void updateCalcTask() {
