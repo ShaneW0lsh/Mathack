@@ -12,12 +12,6 @@ public class Expression {
         this.operation = operation;
         this.answer = answer;
     }
-    // public Expression(String[] operands, String operation, String answer) {
-    //     this.fVal = operands[0];
-    //     this.sVal = operands[1];
-    //     this.operation = operation;
-    //     this.answer = answer;
-    // }
 
     public Expression() {};
 
