@@ -7,7 +7,7 @@ import java.util.ArrayList;
 //      rename data var and getdata() method 
 public class DataHolder {
     private static ArrayList<Expression> data = new ArrayList<>();
-    private static int numOfTasks;
+    private static int numOfTasks = 10;
     
     private static final DataHolder holder = new DataHolder();
     public static DataHolder getInstance() {

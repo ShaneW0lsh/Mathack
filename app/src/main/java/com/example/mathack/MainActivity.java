@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         bntSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "in development", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
             }
         });
 

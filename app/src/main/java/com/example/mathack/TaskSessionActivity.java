@@ -81,7 +81,7 @@ public class TaskSessionActivity extends AppCompatActivity {
     private void initVariables() {
         rand = new Random();
         score = 0;
-        maxScore = 2;
+        maxScore = DataHolder.getInstance().getNumOfTasks();
         maxOperationsAvailable = 4;
 
         initViews();
