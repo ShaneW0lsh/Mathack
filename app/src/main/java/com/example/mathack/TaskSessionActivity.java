@@ -82,7 +82,7 @@ public class TaskSessionActivity extends AppCompatActivity {
         rand = new Random();
         score = 0;
         maxScore = DataHolder.getInstance().getNumOfTasks();
-        maxOperationsAvailable = 5;
+        maxOperationsAvailable = 4;
 
         initViews();
     }
@@ -103,34 +103,33 @@ public class TaskSessionActivity extends AppCompatActivity {
         switch(operationInt) {
             case 0:
                 operationStr = "+"; 
-                generateOperands(300, false, operands);
+                generateOperands(300, 300, false, operands);
                 answer = operands.get(0) + operands.get(1);
                 break;
             case 1:
                 operationStr = "-"; 
-                generateOperands(300, false, operands);
+                generateOperands(300, 300, false, operands);
                 answer = operands.get(0) - operands.get(1);
                 break;
             case 2:
                 operationStr = "*"; 
-                generateOperands(26, false, operands);
+                generateOperands(26, 26, false, operands);
                 answer = operands.get(0) * operands.get(1);
                 break;
             case 3:
                 operationStr = ":"; 
-                generateOperands(200, true, operands);
+                generateOperands(200, 200, true, operands);
                 answer = operands.get(0) / operands.get(1);
                 break;
-            case 4:
-                operationStr = "pow"; 
-                generateOperands(5, false, operands);
-                // answer = operands.get(0) / operands.get(1);
-                answer = (long)Math.pow(operands.get(0), operands.get(1));
-                Toast.makeText(this, String.valueOf(answer), Toast.LENGTH_SHORT).show();
-                break;
+            // case 4:
+            //     operationStr = "pow"; 
+            //     generateOperands(3, 13, false, operands);
+            //     answer = (long)Math.pow(operands.get(0), operands.get(1));
+            //     Toast.makeText(this, String.valueOf(answer), Toast.LENGTH_SHORT).show();
+            //     break;
             default:
                 Toast.makeText(this, "error in 'generateExpression()' method", Toast.LENGTH_LONG).show();
-                generateOperands(26, false, operands);
+                generateOperands(26, 26, false, operands);
                 answer = 0;
         }
 
@@ -138,17 +137,17 @@ public class TaskSessionActivity extends AppCompatActivity {
         return expr;
     }
 
-    private void generateOperands(int upperBound, boolean isDivisible, ArrayList<Integer> operands) {
+    private void generateOperands(int fUpperBound, int sUpperBound, boolean isDivisible, ArrayList<Integer> operands) {
         ArrayList<Integer> divisors = new ArrayList<>();
 
-        operands.add(rand.nextInt(upperBound));
+        operands.add(rand.nextInt(fUpperBound));
         
         if (isDivisible) {
             generateDivisors(operands.get(0), divisors);
             int idx = rand.nextInt(divisors.size());
             operands.add(divisors.get(idx));
         } else {
-            operands.add(rand.nextInt(upperBound));
+            operands.add(rand.nextInt(sUpperBound));
         }
     }
 

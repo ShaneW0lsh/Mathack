@@ -10,10 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 //TODO:
-//      2. Add root, power operations
 //      3. Work on the looks
 //      5. Fix the "not solved item is shown in the list" bug
-//      6. add the option for user to set the number of tasks he wants to solve
 
 public class MainActivity extends AppCompatActivity {
 
