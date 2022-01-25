@@ -71,6 +71,7 @@ public class TaskSessionActivity extends AppCompatActivity {
                         Intent intent = new Intent(TaskSessionActivity.this, TaskHistoryActivity.class);
                         score = 0;
                         startActivity(intent);
+                        TaskSessionActivity.this.finish();
                     }
                 }
             }
@@ -80,7 +81,7 @@ public class TaskSessionActivity extends AppCompatActivity {
     private void initVariables() {
         rand = new Random();
         score = 0;
-        maxScore = 20;
+        maxScore = 2;
         maxOperationsAvailable = 4;
 
         initViews();

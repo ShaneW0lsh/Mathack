@@ -2,9 +2,12 @@ package com.example.mathack;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -15,16 +18,13 @@ public class TaskHistoryActivity extends AppCompatActivity {
 
     private ListView expressionsList;
 
-    public void onShowTaskHistory() {
-        for (Expression expr : expressions) {
-            System.out.println(expr.toString());
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_history);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         initViews();
 
@@ -42,11 +42,27 @@ public class TaskHistoryActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onDestroy() {
         DataHolder.clearData();
-        Intent intent = new Intent(TaskHistoryActivity.this, MainActivity.class);
-        startActivity(intent);
+        // Intent intent = new Intent(TaskHistoryActivity.this, MainActivity.class);
+        // startActivity(intent);
         super.onDestroy();
+    }
+
+    public void onShowTaskHistory() {
+        for (Expression expr : expressions) {
+            System.out.println(expr.toString());
+        }
     }
 
     private void initViews() { 
