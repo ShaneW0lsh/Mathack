@@ -82,7 +82,7 @@ public class TaskSessionActivity extends AppCompatActivity {
         rand = new Random();
         score = 0;
         maxScore = DataHolder.getInstance().getNumOfTasks();
-        maxOperationsAvailable = 4;
+        maxOperationsAvailable = 5;
 
         initViews();
     }
@@ -120,6 +120,13 @@ public class TaskSessionActivity extends AppCompatActivity {
                 operationStr = ":"; 
                 generateOperands(200, true, operands);
                 answer = operands.get(0) / operands.get(1);
+                break;
+            case 4:
+                operationStr = "pow"; 
+                generateOperands(5, false, operands);
+                // answer = operands.get(0) / operands.get(1);
+                answer = (long)Math.pow(operands.get(0), operands.get(1));
+                Toast.makeText(this, String.valueOf(answer), Toast.LENGTH_SHORT).show();
                 break;
             default:
                 Toast.makeText(this, "error in 'generateExpression()' method", Toast.LENGTH_LONG).show();
