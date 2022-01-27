@@ -84,6 +84,8 @@ public class TaskSessionActivity extends AppCompatActivity {
         maxScore = DataHolder.getInstance().getNumOfTasks();
         maxOperationsAvailable = 4;
 
+        generateP
+
         initViews();
     }
 
@@ -121,12 +123,12 @@ public class TaskSessionActivity extends AppCompatActivity {
                 generateOperands(200, 200, true, operands);
                 answer = operands.get(0) / operands.get(1);
                 break;
-            // case 4:
-            //     operationStr = "pow"; 
-            //     generateOperands(3, 13, false, operands);
-            //     answer = (long)Math.pow(operands.get(0), operands.get(1));
-            //     Toast.makeText(this, String.valueOf(answer), Toast.LENGTH_SHORT).show();
-            //     break;
+            case 4:
+                operationStr = "pow"; 
+                // generateOperands(false, true, perands);
+                answer = (long)Math.pow(operands.get(0), operands.get(1));
+                Toast.makeText(this, String.valueOf(answer), Toast.LENGTH_SHORT).show();
+                break;
             default:
                 Toast.makeText(this, "error in 'generateExpression()' method", Toast.LENGTH_LONG).show();
                 generateOperands(26, 26, false, operands);
@@ -137,12 +139,15 @@ public class TaskSessionActivity extends AppCompatActivity {
         return expr;
     }
 
-    private void generateOperands(int fUpperBound, int sUpperBound, boolean isDivisible, ArrayList<Integer> operands) {
+    private void generateOperands(int fUpperBound, int sUpperBound, OperationType oType, ArrayList<Integer> operands) {
         ArrayList<Integer> divisors = new ArrayList<>();
 
         operands.add(rand.nextInt(fUpperBound));
         
-        if (isDivisible) {
+        if (isPower) {
+            int tmpIxd = rand.nextInt();
+            powerOperands.get(tmpIdx);
+        } else if (isDivisible) {
             generateDivisors(operands.get(0), divisors);
             int idx = rand.nextInt(divisors.size());
             operands.add(divisors.get(idx));
@@ -150,6 +155,10 @@ public class TaskSessionActivity extends AppCompatActivity {
             operands.add(rand.nextInt(sUpperBound));
         }
     }
+
+    // private ArrayList<Expression> generatePowerOperands() {
+    //     ArrayList<Expression> ret;
+
 
     private ArrayList<Integer> generateDivisors(int num, ArrayList<Integer> divisors) {
         for (int i = 1; i * i <= num; ++i) {
@@ -164,8 +173,19 @@ public class TaskSessionActivity extends AppCompatActivity {
         return divisors;
     }
 
+    private Operation genOperationType() {
+
+    }
+
+    private ArrayList<Integer> genOperands() { 
+        
+    }
+
     private void updateCalcTask() {
-        Expression expression = generateExpression();
+        Operation operation = genOperation();
+        ArrayList<Integer> operands = genOperands();
+        Expression expression = generateExpression(operands, operation);
+
         this.ans = expression.getAnswer();
 
         DataHolder.getInstance().addData(expression);
