@@ -1,6 +1,5 @@
-package com.example.mathack;
+package com.shane.mathack.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -9,6 +8,10 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.shane.mathack.util.DataHolder;
+import com.shane.mathack.util.expression.Expression;
+import com.shane.mathack.R;
 
 import java.util.ArrayList;
 

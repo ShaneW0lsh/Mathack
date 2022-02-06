@@ -1,4 +1,4 @@
-package com.example.mathack;
+package com.shane.mathack;
 
 public enum Operation {
     ADDITION,

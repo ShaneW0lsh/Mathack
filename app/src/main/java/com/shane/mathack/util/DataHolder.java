@@ -1,4 +1,6 @@
-package com.example.mathack;
+package com.shane.mathack.util;
+
+import com.shane.mathack.util.expression.Expression;
 
 import java.util.ArrayList;
 

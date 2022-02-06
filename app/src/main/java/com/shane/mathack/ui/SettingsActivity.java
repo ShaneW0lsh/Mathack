@@ -1,4 +1,4 @@
-package com.example.mathack;
+package com.shane.mathack.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
+
+import com.shane.mathack.util.DataHolder;
+import com.shane.mathack.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
