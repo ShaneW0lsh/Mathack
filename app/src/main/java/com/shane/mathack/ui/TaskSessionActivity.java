@@ -1,7 +1,5 @@
 package com.shane.mathack.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -9,14 +7,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.shane.mathack.R;
 import com.shane.mathack.util.DataHolder;
 import com.shane.mathack.util.expression.Expression;
-import com.shane.mathack.Operation;
-import com.shane.mathack.R;
-
-import java.util.ArrayList;
 
 public class TaskSessionActivity extends AppCompatActivity {
 

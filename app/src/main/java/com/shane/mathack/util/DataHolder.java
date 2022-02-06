@@ -8,6 +8,7 @@ import java.util.ArrayList;
 // TODO 
 //      1. rename data var and getdata() method 
 //      2. make sure to understand how this works, I think getInstance() and addData() are not written correctly
+
 public class DataHolder {
     private static ArrayList<Expression> data = new ArrayList<>();
     private static int numOfTasks = 10;
