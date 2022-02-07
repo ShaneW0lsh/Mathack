@@ -19,7 +19,7 @@ import com.shane.mathack.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnStart, bntSettings, btnExit;
+    private Button mStartBtn, mSettingsBtn, mExitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        mStartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TaskSessionActivity.class);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bntSettings.setOnClickListener(new View.OnClickListener() {
+        mSettingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnExit.setOnClickListener(new View.OnClickListener() {
+        mExitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "in development", Toast.LENGTH_SHORT).show();
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        btnStart = findViewById(R.id.btnStart);
-        bntSettings = findViewById(R.id.btnSettings);
-        btnExit = findViewById(R.id.btnExit);
+        mStartBtn = findViewById(R.id.mStartBtn);
+        mSettingsBtn = findViewById(R.id.mSettingsBtn);
+        mExitBtn = findViewById(R.id.mExitBtn);
     }
 }
