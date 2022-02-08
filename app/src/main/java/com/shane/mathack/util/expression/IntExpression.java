@@ -6,7 +6,7 @@ class IntExpression extends Expression {
 
     public IntExpression(int border) {
         Random rand = new Random();
-        this.value = rand.nextInt(border) + 1;
-        this.inString = Integer.toString(this.value);
+        this.mValue = rand.nextInt(border) + 1;
+        this.mStr = Integer.toString(this.mValue);
     }
 }

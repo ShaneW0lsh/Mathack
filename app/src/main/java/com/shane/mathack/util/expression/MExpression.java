@@ -2,9 +2,9 @@ package com.shane.mathack.util.expression;
 
 import java.util.Random;
 
-public class mExpression extends Expression {
+public class MExpression extends Expression {
 
-    public mExpression(int depth, int border) {
+    public MExpression(int depth, int border) {
         final Expression out;
         if (depth <= 0) {
             out = new IntExpression(border);
@@ -17,7 +17,7 @@ public class mExpression extends Expression {
                 out = new AddMExpression(depth-1, border);
             }
         }
-        this.value = out.evaluate();
-        this.inString = out.toString();
+        this.mValue = out.evaluate();
+        this.mStr = out.toString();
     }
 }

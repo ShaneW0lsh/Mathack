@@ -2,9 +2,19 @@ package com.shane.mathack.util.expression;
 
 import java.util.Random;
 
+
+// This package of classes implement this grammar:
+//
+// E -> I
+// E -> E + E
+// E -> M * M
+// M -> I
+// M -> (E + E)
+// M -> M * M
+
+
 public class Expression {
 
-    public Expression() {}
     public Expression(int depth, int border) {
         final Expression out;
 
@@ -20,18 +30,20 @@ public class Expression {
             }
         }
 
-        this.value = out.evaluate();
-        this.inString = out.toString();
+        this.mValue = out.evaluate();
+        this.mStr = out.toString();
     }
 
+    public Expression() {}
+
     public String toString() {
-        return this.inString;
+        return this.mStr;
     }
 
     public int evaluate() {
-        return this.value;
+        return this.mValue;
     }
 
-    protected int value;
-    protected String inString;
+    protected int mValue;
+    protected String mStr;
 }
