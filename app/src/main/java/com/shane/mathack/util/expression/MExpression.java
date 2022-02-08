@@ -10,13 +10,13 @@ public class MExpression extends Expression {
             out = new IntExpression(border);
         } else {
             Random rand = new Random();
-            int p = rand.nextInt(2);
-            if (p == 1) {
-                out = new MultiplyExpression(depth-1, border);
+            if (0 == rand.nextInt(2)) {
+                out = new MultiplyExpression(depth - 1, border);
             } else {
-                out = new AddMExpression(depth-1, border);
+                out = new AddMExpression(depth - 1, border);
             }
         }
+
         this.mValue = out.evaluate();
         this.mStr = out.toString();
     }

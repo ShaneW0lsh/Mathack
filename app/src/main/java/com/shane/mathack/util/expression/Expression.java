@@ -17,16 +17,14 @@ public class Expression {
 
     public Expression(int depth, int border) {
         final Expression out;
-
         if (depth <= 0) {
             out = new IntExpression(border);
         } else {
             Random rand = new Random();
-            int p = rand.nextInt(2);
-            if (p == 1) {
-                out = new AddExpression(depth-1, border);
+            if (0 == rand.nextInt(2)) {
+                out = new AddExpression(depth - 1, border);
             } else {
-                out = new MultiplyExpression(depth-1, border);
+                out = new MultiplyExpression(depth - 1, border);
             }
         }
 

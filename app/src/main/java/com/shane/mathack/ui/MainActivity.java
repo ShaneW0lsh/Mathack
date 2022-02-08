@@ -16,6 +16,7 @@ import com.shane.mathack.R;
 //      2. Work on the looks
 //      3. write recycle view for history activity
 //      4. Fix the "not solved item is shown in the list" bug
+//      5. Add ability for the user to modificate depth value through Settings Activity
 
 public class MainActivity extends AppCompatActivity {
 
