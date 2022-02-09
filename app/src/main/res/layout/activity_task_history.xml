@@ -9,7 +9,7 @@
     android:paddingBottom="33dp">
 
     <ListView
-        android:id="@+id/expressionsList"
+        android:id="@+id/mExpressionsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

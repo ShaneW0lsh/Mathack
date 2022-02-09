@@ -16,27 +16,27 @@ import com.shane.mathack.util.expression.Expression;
 
 public class TaskSessionActivity extends AppCompatActivity {
 
-    private TextView tvCalcTask;
-    private EditText etUserInput;
-    private TextView txtScore;
+    private TextView mTaskTextView;
+    private TextView mScoreTextView;
+    private EditText mUIEditText;
 
-    private String ans;
+    private String mAnswer;
 
-    private long score;
-    private long maxScore;
+    private long mScore = 0;
+    final private long mMaxScore = DataHolder.getInstance().getNumOfTasks();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_session);
 
-        initVariables();
+        initViews();
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
 
-        updateCalcTask();
+        updateTask();
 
-        etUserInput.addTextChangedListener(new TextWatcher() {
+        mUIEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -49,7 +49,7 @@ public class TaskSessionActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if (editable.toString().equals(ans)) {
+                if (editable.toString().equals(mAnswer)) {
                     editable.clear();
 
                     if (dingSound.isPlaying()) {
@@ -58,13 +58,13 @@ public class TaskSessionActivity extends AppCompatActivity {
                         dingSound.start();
                     }
 
-                    ++score;
-                    txtScore.setText(Long.toString(score));
-                    updateCalcTask();
+                    ++mScore;
+                    mScoreTextView.setText(Long.toString(mScore));
+                    updateTask();
 
-                    if (score == maxScore) {
+                    if (mScore == mMaxScore) {
                         Intent intent = new Intent(TaskSessionActivity.this, TaskHistoryActivity.class);
-                        score = 0;
+                        mScore = 0;
                         startActivity(intent);
                         TaskSessionActivity.this.finish();
                     }
@@ -73,25 +73,18 @@ public class TaskSessionActivity extends AppCompatActivity {
         });
     }
 
-    private void initVariables() {
-        score = 0;
-        maxScore = DataHolder.getInstance().getNumOfTasks();
-
-        initViews();
-    }
-
     private void initViews() {
-        tvCalcTask = findViewById(R.id.tvCalcTask);
-        etUserInput = findViewById(R.id.etUserInput);
-        txtScore = findViewById(R.id.txtScore);
+        mTaskTextView = findViewById(R.id.mTaskTextView);
+        mUIEditText = findViewById(R.id.mUIEditText);
+        mScoreTextView= findViewById(R.id.mScoreTextView);
     }
 
-    private void updateCalcTask() {
-        Expression word = new Expression(3, 1000);
-        tvCalcTask.setText(word.toString());
+    private void updateTask() {
+        Expression word = new Expression(4, 1000);
+        mTaskTextView.setText(word.toString());
 
-        this.ans = Integer.toString(word.evaluate());
-        System.out.println(this.ans);
+        mAnswer = Integer.toString(word.evaluate());
+        System.out.println(mAnswer);
 
         DataHolder.getInstance().addData(word);
     }    

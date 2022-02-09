@@ -13,7 +13,8 @@ import com.shane.mathack.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    EditText edNumberOfTasks;
+    EditText mNumEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,27 +27,26 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        edNumberOfTasks = findViewById(R.id.edNumberOfTasks);
+        mNumEditText = findViewById(R.id.mNumEditText);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        String nOfTasks = edNumberOfTasks.getText().toString();
+        String numOfTasks = mNumEditText.getText().toString();
 
-        if (!nOfTasks.isEmpty()) {
-            int nOfTasksInt = Integer.valueOf(nOfTasks);
-            DataHolder.getInstance().setNumOfTasks(nOfTasksInt);
+        if (!numOfTasks.isEmpty()) {
+            int numOfTasksInt = Integer.valueOf(numOfTasks);
+            DataHolder.getInstance().setNumOfTasks(numOfTasksInt);
         }
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            this.finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -9,9 +9,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtScore"
-        android:layout_above="@+id/tvCalcTask"
-        android:layout_toRightOf="@+id/etUserInput"
+        android:id="@+id/mScoreTextView"
+        android:layout_above="@+id/mTaskTextView"
+        android:layout_toRightOf="@+id/mUIEditText"
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="90dp"
         android:layout_marginRight="10dp"
@@ -21,8 +21,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etUserInput"
-        android:id="@+id/tvCalcTask"
+        android:layout_above="@+id/mUIEditText"
+        android:id="@+id/mTaskTextView"
         android:text="5 * 6"
         android:layout_centerInParent="true"
         android:textSize="35dp"
@@ -35,7 +35,7 @@
         android:maxWidth="350dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/etUserInput"
+        android:id="@+id/mUIEditText"
         android:inputType="numberDecimal"/>
 
 </RelativeLayout>

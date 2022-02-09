@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.shane.mathack.R;
 
 
-//      TODO:
+//  TODO:
 //      1. rewrite how the power works
 //      2. Work on the looks
 //      3. write recycle view for history activity

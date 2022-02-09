@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:hint="Number of tasks"
-        android:id="@+id/edNumberOfTasks"
+        android:id="@+id/mNumEditText"
         android:inputType="numberDecimal"/>
 
 </RelativeLayout>

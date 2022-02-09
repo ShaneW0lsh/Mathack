@@ -3,7 +3,7 @@ package com.shane.mathack.util.expression;
 import java.util.Random;
 
 
-// This package of classes implement this grammar:
+// This package of classes implements this grammar:
 //
 // E -> I
 // E -> E + E
