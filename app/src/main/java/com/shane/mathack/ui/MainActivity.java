@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        mStartBtn = findViewById(R.id.mStartBtn);
-        mSettingsBtn = findViewById(R.id.mSettingsBtn);
-        mExitBtn = findViewById(R.id.mExitBtn);
+        mStartBtn = (Button) findViewById(R.id.mStartBtn);
+        mSettingsBtn = (Button) findViewById(R.id.mSettingsBtn);
+        mExitBtn = (Button) findViewById(R.id.mExitBtn);
     }
 }
