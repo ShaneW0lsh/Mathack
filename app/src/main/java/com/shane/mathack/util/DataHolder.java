@@ -8,10 +8,12 @@ import java.util.ArrayList;
 // TODO 
 //      1. rename data var and getdata() method 
 //      2. make sure to understand how this works, I think getInstance() and addData() are not written correctly
+//      3. rewrite this in Android convention way
 
 public class DataHolder {
     private static ArrayList<Expression> data = new ArrayList<>();
     private static int numOfTasks = 10;
+    private static int depth = 4;
     
     private static final DataHolder holder = new DataHolder();
     public static DataHolder getInstance() {
@@ -32,6 +34,14 @@ public class DataHolder {
 
     public static void setNumOfTasks(int num) {
         numOfTasks = num;
+    }
+
+    public static int getDepth() {
+        return depth;
+    }
+
+    public static void setDepth(int a) {
+        depth = a;
     }
 
     public static void clearData() {
