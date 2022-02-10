@@ -38,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         String numOfTasks = mNumEditText.getText().toString();
         String depth =  mDepthEditText.getText().toString();
-        
+
         if (!numOfTasks.isEmpty()) {
             int tmp = Integer.valueOf(numOfTasks);
             DataHolder.getInstance().setNumOfTasks(tmp);

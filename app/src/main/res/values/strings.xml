@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Mathack</string>
     <string name="start_button">start</string>
-    <string name="exit_button"><exit></exit></string>
+    <string name="exit_button">exit</string>
     <string name="settings_button">settings</string>
 </resources>

@@ -23,7 +23,8 @@ public class TaskSessionActivity extends AppCompatActivity {
     private String mAnswer;
 
     private long mScore = 0;
-    final private long mMaxScore = DataHolder.getInstance().getNumOfTasks();
+    final private long mMaxScore = DataHolder.getNumOfTasks();
+    final private int mDepth = DataHolder.getDepth();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,12 +81,12 @@ public class TaskSessionActivity extends AppCompatActivity {
     }
 
     private void updateTask() {
-        Expression word = new Expression(4, 1000);
+        Expression word = new Expression(mDepth, 1000);
         mTaskTextView.setText(word.toString());
 
         mAnswer = Integer.toString(word.evaluate());
         System.out.println(mAnswer);
 
-        DataHolder.getInstance().addData(word);
+        DataHolder.addData(word);
     }    
 }
