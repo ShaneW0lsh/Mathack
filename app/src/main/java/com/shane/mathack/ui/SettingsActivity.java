@@ -14,6 +14,7 @@ import com.shane.mathack.R;
 public class SettingsActivity extends AppCompatActivity {
 
     EditText mNumEditText;
+    EditText mDepthEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        mNumEditText = findViewById(R.id.mNumEditText);
+        mNumEditText = (EditText) findViewById(R.id.mNumEditText);
+        mDepthEditText = (EditText) findViewById(R.id.mDepthEditText);
     }
 
     @Override
@@ -35,10 +37,16 @@ public class SettingsActivity extends AppCompatActivity {
         super.onDestroy();
 
         String numOfTasks = mNumEditText.getText().toString();
-
+        String depth =  mDepthEditText.getText().toString();
+        
         if (!numOfTasks.isEmpty()) {
-            int numOfTasksInt = Integer.valueOf(numOfTasks);
-            DataHolder.getInstance().setNumOfTasks(numOfTasksInt);
+            int tmp = Integer.valueOf(numOfTasks);
+            DataHolder.getInstance().setNumOfTasks(tmp);
+        }
+
+        if (!depth.isEmpty()) { 
+           int tmp = Integer.valueOf(depth);
+           DataHolder.getInstance().setDepth(tmp);
         }
     }
 
