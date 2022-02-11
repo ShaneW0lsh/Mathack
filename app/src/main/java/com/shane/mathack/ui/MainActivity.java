@@ -29,33 +29,33 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
-        mStartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TaskSessionActivity.class);
-                startActivity(intent);
-            }
-        });
+        //mStartBtn.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Intent intent = new Intent(MainActivity.this, TaskSessionActivity.class);
+        //        startActivity(intent);
+        //    }
+        //});
 
-        mSettingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
+        //mSettingsBtn.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+        //        startActivity(intent);
+        //    }
+        //});
 
-        mExitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "in development", Toast.LENGTH_SHORT).show();
-            }
-        });
+        //mExitBtn.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Toast.makeText(MainActivity.this, "in development", Toast.LENGTH_SHORT).show();
+        //    }
+       // });
     }
 
     private void initViews() {
-        mStartBtn = (Button) findViewById(R.id.mStartBtn);
-        mSettingsBtn = (Button) findViewById(R.id.mSettingsBtn);
-        mExitBtn = (Button) findViewById(R.id.mExitBtn);
+       // mStartBtn = (Button) findViewById(R.id.mStartBtn);
+       // mSettingsBtn = (Button) findViewById(R.id.mSettingsBtn);
+       // mExitBtn = (Button) findViewById(R.id.mExitBtn);
     }
 }
