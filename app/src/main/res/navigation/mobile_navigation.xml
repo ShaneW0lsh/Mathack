@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/navigation_history"
         android:name="com.shane.mathack.ui.HistoryFragment"
-        android:label="History"
+        android:label="@string/history_nav_button"
         tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/navigation_play"
         android:name="com.shane.mathack.ui.PlayFragment"
-        android:label="Play"
+        android:label="@string/play_nav_button"
         tools:layout="@layout/fragment_play" />
 
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.shane.mathack.ui.SettingsFragment"
-        android:label="Settings"
+        android:label="@string/settings_nav_button"
         tools:layout="@layout/fragment_settings" />
 </navigation>
