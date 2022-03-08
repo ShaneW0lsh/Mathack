@@ -1,59 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:layout_centerInParent="true"
-        android:id="@+id/mTitleTxt"
-        android:textSize="65dp"
-        android:layout_marginBottom="60dp"/>
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/nav_view"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/mobile_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_below="@+id/mTitleTxt"
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation_menu"/>
-
-    <!--
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:id="@+id/mStartBtn"
-        android:text="@string/start_button"
-        android:textSize="30dp"
-        android:minWidth="200dp"
-        android:layout_marginBottom="10dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:id="@+id/mSettingsBtn"
-        android:layout_below="@+id/mStartBtn"
-        android:text="@string/settings_button"
-        android:textSize="30dp"
-        android:minWidth="200dp"
-        android:layout_marginBottom="10dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:id="@+id/mExitBtn"
-        android:layout_below="@+id/mSettingsBtn"
-        android:text="@string/exit_button"
-        android:textSize="30dp"
-        android:minWidth="200dp"/>
-    -->
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>
