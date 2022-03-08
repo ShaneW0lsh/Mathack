@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SpeedCalc" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="Theme.Mathack" parent="Theme.Material3.Light">
 
         <item name="colorPrimary">#7E57C2</item>
         <item name="colorPrimaryVariant">@color/design_default_color_primary_variant</item>
