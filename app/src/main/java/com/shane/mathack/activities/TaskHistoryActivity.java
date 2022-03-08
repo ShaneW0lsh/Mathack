@@ -1,4 +1,4 @@
-package com.shane.mathack.ui;
+package com.shane.mathack.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;

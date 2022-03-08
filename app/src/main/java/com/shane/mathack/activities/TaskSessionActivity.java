@@ -1,4 +1,4 @@
-package com.shane.mathack.ui;
+package com.shane.mathack.activities;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -32,6 +32,8 @@ public class TaskSessionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_session);
 
         initViews();
+
+        setTitle("Training");
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
 

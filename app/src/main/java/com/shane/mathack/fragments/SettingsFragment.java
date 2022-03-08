@@ -1,4 +1,4 @@
-package com.shane.mathack.ui;
+package com.shane.mathack.fragments;
 
 import android.os.Bundle;
 import android.util.Log;

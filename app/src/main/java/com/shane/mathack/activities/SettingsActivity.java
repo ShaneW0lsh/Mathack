@@ -1,4 +1,4 @@
-package com.shane.mathack.ui;
+package com.shane.mathack.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
