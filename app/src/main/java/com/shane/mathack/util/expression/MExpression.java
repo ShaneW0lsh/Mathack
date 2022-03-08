@@ -17,7 +17,7 @@ public class MExpression extends Expression {
             }
         }
 
-        this.mValue = out.evaluate();
-        this.mStr = out.toString();
+        mValue = out.evaluate();
+        mStr = out.toString();
     }
 }

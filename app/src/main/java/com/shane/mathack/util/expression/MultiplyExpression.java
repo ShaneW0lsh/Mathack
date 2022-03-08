@@ -7,7 +7,7 @@ class MultiplyExpression extends Expression {
         left = new MExpression(depth-1, (int)Math.sqrt(border));
         right = new MExpression(depth-1, (int)Math.sqrt(border));
 
-        this.mValue = left.evaluate() * right.evaluate();
-        this.mStr = String.format("%s * %s", left.toString(), right.toString());
+        mValue = left.evaluate() * right.evaluate();
+        mStr = String.format("%s * %s", left.toString(), right.toString());
     }
 }

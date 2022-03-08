@@ -28,18 +28,17 @@ public class Expression {
             }
         }
 
-        this.mValue = out.evaluate();
-        this.mStr = out.toString();
+        mValue = out.evaluate();
+        mStr = out.toString();
     }
 
     public Expression() {}
 
     public String toString() {
-        return this.mStr;
+        return mStr;
     }
-
     public int evaluate() {
-        return this.mValue;
+        return mValue;
     }
 
     protected int mValue;
