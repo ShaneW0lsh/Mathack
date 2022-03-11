@@ -1,2 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Mathack" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">#B82C2C</item>
+        <item name="colorPrimaryDark">#113DAE</item>
+        <item name="colorOnPrimary">#370606</item>
+        <item name="colorPrimaryContainer">#5D78C8</item>
+        <item name="colorOnPrimaryContainer">#141F32</item>
+        <item name="colorSecondary">@color/mathack_secondary</item>
+        <item name="colorOnSecondary">#611F1F</item>
+        <item name="colorSecondaryContainer">#354A88</item>
+        <item name="colorOnSecondaryContainer">@color/mathack_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/mathack_tertiary</item>
+        <item name="colorOnTertiary">@color/mathack_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/mathack_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/mathack_onTertiaryContainer</item>
+        <item name="android:colorBackground">@color/mathack_background</item>
+        <item name="colorOnBackground">@color/mathack_onBackground</item>
+        <item name="colorSurface">@color/mathack_surface</item>
+        <item name="colorOnSurface">@color/mathack_onSurface</item>
+        <item name="colorSurfaceVariant">#545EBC</item>
+        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant</item>
+        <item name="colorOutline">@color/mathack_outline</item>
+        <item name="colorOnSurfaceInverse">@color/mathack_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/mathack_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/mathack_primaryInverse</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorErrorContainer">@color/errorContainer</item>
+        <item name="colorOnErrorContainer">@color/onErrorContainer</item>
+        <item name="android:navigationBarColor">@color/mathack_androidNavigation</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
