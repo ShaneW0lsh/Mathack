@@ -1,6 +1,7 @@
 package com.shane.mathack.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
@@ -32,7 +33,7 @@ public class TaskSessionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_session);
 
         initViews();
-
+        //mTaskTextView.setTextColor(Color.rgb(0, 0, 0));
         setTitle("Training");
 
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
