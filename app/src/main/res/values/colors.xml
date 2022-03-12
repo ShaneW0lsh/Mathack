@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <color name="mathack_primary">#0057CE</color>
+    <color name="mathack_primary">#344955</color>
     <color name="mathack_primaryDark">#E8EDFA</color>
     <color name="mathack_onPrimary">#FFFFFF</color>
     <color name="mathack_primaryContainer">#D8E2FF</color>
@@ -24,72 +24,46 @@
     <color name="mathack_inverseSurface">#303033</color>
     <color name="mathack_primaryInverse">#AEC6FF</color>
     <color name="mathack_androidNavigation">#BCC3D5</color>
-    <color name="splash">@color/accent_blue</color>
 
     <color name="error">#BA1B1B</color>
     <color name="errorContainer">#FFDAD4</color>
     <color name="onError">#FFFFFF</color>
     <color name="onErrorContainer">#410001</color>
 
-    <!-- Default Theme -->
-    <color name="divider_default">@color/md_black_1000_12</color>
+    <!--Night theme colors-->
+    <color name="mathack_primary_night">#D0BCFF</color>
+    <color name="mathack_primaryDark_night">#2A2631</color>
+    <color name="mathack_onPrimary_night">#381E72</color>
+    <color name="mathack_primaryContainer_night">#4F378B</color>
+    <color name="mathack_onPrimaryContainer_night">#EADDFF</color>
 
-    <!-- Blue Theme -->
-    <color name="accent_blue">#54759E</color>
+    <color name="mathack_secondary_night">#CCC2DC</color>
+    <color name="mathack_onSecondary_night">#332D41</color>
+    <color name="mathack_secondaryContainer_night">#4A4458</color>
+    <color name="mathack_onSecondaryContainer_night">#E8DEF8</color>
 
-    <!-- AMOLED Mode -->
-    <color name="surface_amoled">#000001</color>
-    <color name="background_amoled">#000000</color>
+    <color name="mathack_tertiary_night">#EFB8C8</color>
+    <color name="mathack_onTertiary_night">#492532</color>
+    <color name="mathack_tertiaryContainer_night">#633B48</color>
+    <color name="mathack_onTertiaryContainer_night">#FFD8E4</color>
 
-    <color name="filter_light">#FFC107</color>
-    <color name="filter_dark">#FFEB3B</color>
+    <color name="mathack_error_night">#F2B8B5</color>
+    <color name="mathack_onError_night">#601410</color>
+    <color name="mathack_errorContainer_night">#8C1D18</color>
+    <color name="mathack_onErrorContainer_night">#F9DEDC</color>
 
-    <color name="reader_background_dark">#202125</color>
+    <color name="mathack_background_night">#1C1B1F</color>
+    <color name="mathack_onBackground_night">#E6E1E5</color>
+    <color name="mathack_surface_night">#1C1B1F</color>
+    <color name="mathack_onSurface_night">#E6E1E5</color>
 
-    <!-- Material Design Colors -->
-    <color name="md_black_1000">#000000</color>
-    <color name="md_black_1000_87">#DE000000</color>
-    <color name="md_black_1000_54">#8A000000</color>
-    <color name="md_black_1000_38">#61000000</color>
-    <color name="md_black_1000_12">#1F000000</color>
-    <color name="md_black_1000_8">#14000000</color>
-    <color name="md_black_1000_6">#0F000000</color>
+    <color name="mathack_outline_night">#938F99</color>
+    <color name="mathack_surfaceVariant_night">#49454F</color>
+    <color name="mathack_onSurfaceVariant_night">#CAC4D0</color>
 
-    <color name="md_white_1000">#FFFFFFFF</color>
-    <color name="md_white_1000_70">#B3FFFFFF</color>
-    <color name="md_white_1000_54">#8AFFFFFF</color>
-    <color name="md_white_1000_50">#80FFFFFF</color>
-    <color name="md_white_1000_20">#33FFFFFF</color>
-    <color name="md_white_1000_12">#1FFFFFFF</color>
-    <color name="md_white_1000_8">#14FFFFFF</color>
-    <color name="md_white_1000_6">#0FFFFFFF</color>
+    <color name="mathack_navigationBar_night">#2A2631</color>
 
-    <color name="md_grey_50">#FAFAFA</color>
-    <color name="md_grey_50_75">#BFFAFAFA</color>
-    <color name="md_grey_100">#F5F5F5</color>
-    <color name="md_grey_300">#E0E0E0</color>
-    <color name="md_grey_800">#424242</color>
-    <color name="md_grey_900">#212121</color>
-    <color name="md_grey_900_75">#BF212121</color>
 
-    <color name="md_blue_A200">#448AFF</color>
-    <color name="md_blue_A200_75">#BF448AFF</color>
-    <color name="md_blue_A200_50">#80448AFF</color>
-
-    <color name="md_blue_A400">#2979FF</color>
-    <color name="md_blue_A400_75">#BF2979FF</color>
-    <color name="md_blue_A400_38">#612979FF</color>
-    <color name="md_blue_A400_12">#1F2979FF</color>
-
-    <color name="md_blue_grey_900">#263238</color>
-    <color name="md_blue_grey_800">#37474F</color>
-
-    <!-- Navigation Overlay Colors -->
-    <color name="navigation_next">#CB84E296</color>
-    <color name="navigation_prev">#CCFF7733</color>
-    <color name="navigation_menu">#CC95818D</color>
-    <color name="navigation_right">#CCA6CFD5</color>
-    <color name="navigation_left">#CC7D1128</color>
 
     <!-- ActionMode status bar color -->
     <color name="abc_decor_view_status_guard" tools:override="true">@android:color/transparent</color>

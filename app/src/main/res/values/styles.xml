@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Mathack.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Mathack.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.Mathack.BottomNavigationView" parent="">
+        <item name="colorSurface">@color/error</item>
+        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant_night</item>
+    </style>
+</resources>

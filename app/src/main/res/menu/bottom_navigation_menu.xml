@@ -9,7 +9,7 @@
       android:icon="@drawable/ic_play"
       android:title="@string/play_nav_button"/>
   <item
-      android:id="@+id/navigation_settings"
-      android:icon="@drawable/ic_settings"
-      android:title="@string/settings_nav_button"/>
+      android:id="@+id/navigation_learn"
+      android:icon="@drawable/ic_learn"
+      android:title="@string/learn_nav_button"/>
 </menu>

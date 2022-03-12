@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--==============-->
+    <!--Navigation Bar-->
+    <!--==============-->
+    <style name="Widget.Mathack.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Mathack.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.Mathack.BottomNavigationView" parent="">
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant_night</item>
+    </style>
+
+    <!--=======-->
+    <!--Toolbar-->
+    <!--=======-->
+    <style name="Widget.Mathack.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Mathack.Toolbar</item>
+    </style>
+
+    <style name="ThemeOverlay.Mathack.Toolbar" parent="">
+        <item name="colorSurface">@color/error</item>
+        <item name="colorOnSurface">@color/error</item>
+    </style>
+</resources>

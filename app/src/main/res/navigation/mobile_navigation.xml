@@ -9,17 +9,17 @@
         android:id="@+id/navigation_history"
         android:name="com.shane.mathack.fragments.HistoryFragment"
         android:label="@string/history_nav_button"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history"/>
 
     <fragment
         android:id="@+id/navigation_play"
         android:name="com.shane.mathack.fragments.PlayFragment"
         android:label="@string/play_nav_button"
-        tools:layout="@layout/fragment_play" />
+        tools:layout="@layout/fragment_play"/>
 
     <fragment
-        android:id="@+id/navigation_settings"
-        android:name="com.shane.mathack.fragments.SettingsFragment"
-        android:label="@string/settings_nav_button"
-        tools:layout="@layout/fragment_settings" />
+        android:id="@+id/navigation_learn"
+        android:name="com.shane.mathack.fragments.LearnFragment"
+        android:label="@string/learn_nav_button"
+        tools:layout="@layout/fragment_learn"/>
 </navigation>
