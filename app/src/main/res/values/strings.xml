@@ -3,4 +3,5 @@
     <string name="play_nav_button">Play</string>
     <string name="learn_nav_button">Learn</string>
     <string name="history_nav_button">History</string>
+    <string name="more_nav_button">More</string>
 </resources>

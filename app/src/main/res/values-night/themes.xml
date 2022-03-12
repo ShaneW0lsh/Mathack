@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+<!--
+    TODO
+       1. Create "Taco" theme (day/night) variation
+       2. Configure both bottom navigation and tool bars
+-->
     <style name="Theme.Mathack" parent="Theme.Material3.DayNight">
         <!-- Color palettes -->
         <item name="colorPrimary">@color/mathack_primary_night</item>

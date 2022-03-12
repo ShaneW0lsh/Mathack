@@ -22,4 +22,10 @@
         android:name="com.shane.mathack.fragments.LearnFragment"
         android:label="@string/learn_nav_button"
         tools:layout="@layout/fragment_learn"/>
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.shane.mathack.fragments.MoreFragment"
+        android:label="@string/more_nav_button"
+        tools:layout="@layout/fragment_more"/>
 </navigation>
