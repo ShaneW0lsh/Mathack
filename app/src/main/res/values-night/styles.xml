@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!--==============-->
-    <!--Navigation Bar-->
-    <!--==============-->
-    <style name="Widget.Mathack.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Mathack.BottomNavigationView</item>
-    </style>
-
-    <style name="ThemeOverlay.Mathack.BottomNavigationView" parent="">
-        <item name="background">@color/mathack_navigationBar</item>
-        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant</item>
-    </style>
-
-
     <!--=======-->
     <!--Toolbar-->
     <!--=======-->
@@ -23,5 +10,18 @@
     <style name="ThemeOverlay.Mathack.Toolbar" parent="">
         <item name="android:background">@color/mathack_navigationBar</item>
         <item name="colorOnSurface">@color/mathack_onSurface</item>
+    </style>
+
+
+    <!--==============-->
+    <!--Navigation Bar-->
+    <!--==============-->
+    <style name="Widget.Mathack.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Mathack.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.Mathack.BottomNavigationView" parent="">
+        <item name="background">@color/mathack_navigationBar</item>
+        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant</item>
     </style>
 </resources>
