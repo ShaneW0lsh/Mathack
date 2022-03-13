@@ -6,34 +6,34 @@
        1. Create "Taco" theme (day/night) variation
        2. Configure both bottom navigation and tool bars
 -->
-    <style name="Theme.Mathack" parent="Theme.Material3.DayNight">
+    <style name="Theme.Mathack" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Color palettes -->
-        <item name="colorPrimary">@color/mathack_primary_night</item>
-        <item name="colorPrimaryDark">@color/mathack_primaryDark_night</item>
-        <item name="colorOnPrimary">@color/mathack_onPrimary_night</item>
-        <item name="colorPrimaryContainer">@color/mathack_primaryContainer_night</item>
-        <item name="colorOnPrimaryContainer">@color/mathack_onPrimaryContainer_night</item>
+        <item name="colorPrimary">@color/mathack_primary</item>
+        <item name="colorPrimaryDark">@color/mathack_primaryDark</item>
+        <item name="colorOnPrimary">@color/mathack_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/mathack_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/mathack_onPrimaryContainer</item>
 
-        <item name="colorSecondary">@color/mathack_secondary_night</item>
-        <item name="colorOnSecondary">@color/mathack_onSecondary_night</item>
-        <item name="colorSecondaryContainer">@color/mathack_secondaryContainer_night</item>
-        <item name="colorOnSecondaryContainer">@color/mathack_onSecondaryContainer_night</item>
+        <item name="colorSecondary">@color/mathack_secondary</item>
+        <item name="colorOnSecondary">@color/mathack_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/mathack_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/mathack_onSecondaryContainer</item>
 
-        <item name="colorTertiary">@color/mathack_tertiary_night</item>
-        <item name="colorOnTertiary">@color/mathack_onTertiary_night</item>
-        <item name="colorTertiaryContainer">@color/mathack_tertiaryContainer_night</item>
-        <item name="colorOnTertiaryContainer">@color/mathack_onTertiaryContainer_night</item>
+        <item name="colorTertiary">@color/mathack_tertiary</item>
+        <item name="colorOnTertiary">@color/mathack_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/mathack_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/mathack_onTertiaryContainer</item>
 
-        <item name="android:colorBackground">@color/mathack_background_night</item>
-        <item name="colorOnBackground">@color/mathack_onBackground_night</item>
-        <item name="colorPrimarySurface">@color/mathack_surface_night</item>
-        <item name="colorOnSurface">@color/mathack_onSurface_night</item>
+        <item name="android:colorBackground">@color/mathack_background</item>
+        <item name="colorOnBackground">@color/mathack_onBackground</item>
+        <item name="colorPrimarySurface">@color/mathack_surface</item>
+        <item name="colorOnSurface">@color/mathack_onSurface</item>
 
-        <item name="colorOutline">@color/mathack_outline_night</item>
-        <item name="colorSurfaceVariant">@color/mathack_surfaceVariant_night</item>
-        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant_night</item>
+        <item name="colorOutline">@color/mathack_outline</item>
+        <item name="colorSurfaceVariant">@color/mathack_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant</item>
 
-        <item name="android:navigationBarColor">@color/mathack_navigationBar_night</item>
+        <item name="android:navigationBarColor">@color/mathack_navigationBar</item>
 
         <item name="bottomNavigationStyle">@style/Widget.Mathack.BottomNavigationView</item>
 

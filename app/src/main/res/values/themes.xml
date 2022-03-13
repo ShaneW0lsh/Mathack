@@ -1,37 +1,43 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Mathack" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">#35B1F8</item>
+    <style name="Theme.Mathack" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/mathack_primary</item>
         <item name="colorPrimaryDark">@color/mathack_primaryDark</item>
         <item name="colorOnPrimary">@color/mathack_onPrimary</item>
         <item name="colorPrimaryContainer">@color/mathack_primaryContainer</item>
         <item name="colorOnPrimaryContainer">@color/mathack_onPrimaryContainer</item>
+
         <item name="colorSecondary">@color/mathack_secondary</item>
         <item name="colorOnSecondary">@color/mathack_onSecondary</item>
         <item name="colorSecondaryContainer">@color/mathack_secondaryContainer</item>
         <item name="colorOnSecondaryContainer">@color/mathack_onSecondaryContainer</item>
+
         <item name="colorTertiary">@color/mathack_tertiary</item>
         <item name="colorOnTertiary">@color/mathack_onTertiary</item>
         <item name="colorTertiaryContainer">@color/mathack_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/mathack_onTertiaryContainer</item>
+
         <item name="android:colorBackground">@color/mathack_background</item>
         <item name="colorOnBackground">@color/mathack_onBackground</item>
         <item name="colorSurface">@color/mathack_surface</item>
         <item name="colorOnSurface">@color/mathack_onSurface</item>
+
         <item name="colorSurfaceVariant">@color/mathack_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant</item>
         <item name="colorOutline">@color/mathack_outline</item>
         <item name="colorOnSurfaceInverse">@color/mathack_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/mathack_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/mathack_primaryInverse</item>
-        <item name="colorError">@color/error</item>
-        <item name="colorOnError">@color/onError</item>
-        <item name="colorErrorContainer">@color/errorContainer</item>
-        <item name="colorOnErrorContainer">@color/onErrorContainer</item>
+        <item name="colorError">@color/mathack_error</item>
+        <item name="colorOnError">@color/mathack_onError</item>
+        <item name="colorErrorContainer">@color/mathack_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/mathack_onErrorContainer</item>
         <item name="android:navigationBarColor">@color/mathack_androidNavigation</item>
         <item name="android:windowLightStatusBar">true</item>
 
         <item name="bottomNavigationStyle">@style/Widget.Mathack.BottomNavigationView</item>
+        <item name="toolbarStyle">@style/Widget.Mathack.Toolbar</item>
+
     </style>
 
 </resources>

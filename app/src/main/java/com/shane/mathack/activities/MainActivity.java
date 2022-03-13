@@ -3,6 +3,7 @@ package com.shane.mathack.activities;
 import static com.google.android.material.navigation.NavigationBarView.LABEL_VISIBILITY_LABELED;
 
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.google.android.material.navigation.NavigationBarView;
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
 
+        MaterialToolbar mainToolBar = (MaterialToolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(mainToolBar);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(bottomNav, navController);
     }

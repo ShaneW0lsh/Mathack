@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!--==============-->
     <!--Navigation Bar-->
     <!--==============-->
@@ -9,9 +8,10 @@
     </style>
 
     <style name="ThemeOverlay.Mathack.BottomNavigationView" parent="">
-        <item name="colorSurface">#FFFFFF</item>
-        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant_night</item>
+        <item name="background">@color/mathack_navigationBar</item>
+        <item name="colorOnSurfaceVariant">@color/mathack_onSurfaceVariant</item>
     </style>
+
 
     <!--=======-->
     <!--Toolbar-->
@@ -21,7 +21,7 @@
     </style>
 
     <style name="ThemeOverlay.Mathack.Toolbar" parent="">
-        <item name="colorSurface">@color/error</item>
-        <item name="colorOnSurface">@color/error</item>
+        <item name="android:background">@color/mathack_navigationBar</item>
+        <item name="colorOnSurface">@color/mathack_onSurface</item>
     </style>
 </resources>
