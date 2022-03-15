@@ -15,16 +15,16 @@ import java.util.Random;
 
 public class Expression {
 
-    public Expression(int depth, int border) {
+    public Expression(int depth, int constraint) {
         final Expression out;
         if (depth <= 0) {
-            out = new IntExpression(border);
+            out = new IntExpression(constraint);
         } else {
             Random rand = new Random();
             if (0 == rand.nextInt(2)) {
-                out = new AddExpression(depth - 1, border);
+                out = new AddExpression(depth - 1, constraint);
             } else {
-                out = new MultiplyExpression(depth - 1, border);
+                out = new MultiplyExpression(depth - 1, constraint);
             }
         }
 

@@ -4,9 +4,9 @@ import java.util.Random;
 
 class IntExpression extends Expression {
 
-    public IntExpression(int border) {
+    public IntExpression(int constraint) {
         Random rand = new Random();
-        mValue = rand.nextInt(border) + 1;
+        mValue = rand.nextInt(constraint) + 1;
         mStr = Integer.toString(mValue);
     }
 }
