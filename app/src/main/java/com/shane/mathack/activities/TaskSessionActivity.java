@@ -53,7 +53,6 @@ public class TaskSessionActivity extends AppCompatActivity {
 
         initViews();
 
-       //mTaskTextView.setText(ltx);
         setTitle("Training");
         final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
 
@@ -100,7 +99,8 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private void updateTask() {
         Expression word = new Expression(mDepth, 1000);
-        mTaskTextView.setText(String.format("$$\\color{white}{\\Large %s}$$", word.toString()));
+        mTaskTextView.setText(String.format("$$\\color{white}{\\LARGE %s}$$",
+                              word.toString()));
 
         mAnswer = Integer.toString(word.evaluate());
         System.out.println(mAnswer);
