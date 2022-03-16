@@ -16,9 +16,8 @@ import com.shane.mathack.R;
 import com.shane.mathack.util.DataHolder;
 import com.shane.mathack.util.expression.Expression;
 
-import java.util.concurrent.TimeUnit;
 
-import io.github.sidvenu.mathjaxview.MathJaxView;
+import io.github.kexanie.library.MathView;
 
 public class TaskSessionActivity extends AppCompatActivity {
 
@@ -27,7 +26,7 @@ public class TaskSessionActivity extends AppCompatActivity {
     String sz = "huge";
     String ltx = String.format("$$\\color{%s}{\\%s %s}$$", colr, sz, expr);
 
-    private MathJaxView mTaskTextView;
+    private MathView mTaskTextView;
     private TextView mScoreTextView;
     private EditText mInputEditText;
 
@@ -95,24 +94,13 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private void initViews() {
         mScoreTextView= (TextView) findViewById(R.id.scoreTextView);
-        mTaskTextView = (MathJaxView) findViewById(R.id.taskTextView);
+        mTaskTextView = (MathView) findViewById(R.id.taskTextView);
         mInputEditText = (EditText) findViewById(R.id.inputEditText);
     }
 
     private void updateTask() {
         Expression word = new Expression(mDepth, 1000);
-        mTaskTextView.setText(String.format("$$\\color{white}{\\large %s}$$",word.toString()));
-        mTaskTextView.setAlpha(0.0f);
-
-
-        //try out
-        try {
-            Thread.sleep(1000);
-        }
-        catch (InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
-        mTaskTextView.setAlpha(1.0f);
+        mTaskTextView.setText(String.format("$$\\color{white}{\\Large %s}$$", word.toString()));
 
         mAnswer = Integer.toString(word.evaluate());
         System.out.println(mAnswer);

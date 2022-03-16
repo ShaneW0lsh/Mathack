@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class DataHolder {
     private static ArrayList<Expression> data = new ArrayList<>();
     private static int numOfTasks = 10;
-    private static int depth = 1;
+    private static int depth = 4;
     
     private static final DataHolder holder = new DataHolder();
     public static DataHolder getInstance() {

@@ -19,7 +19,7 @@
         android:layout_marginBottom="100dp"
         />
 
-    <io.github.sidvenu.mathjaxview.MathJaxView
+    <io.github.kexanie.library.MathView
         android:id="@+id/taskTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
