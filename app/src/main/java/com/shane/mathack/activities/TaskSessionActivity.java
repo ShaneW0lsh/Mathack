@@ -16,6 +16,8 @@ import com.shane.mathack.R;
 import com.shane.mathack.util.DataHolder;
 import com.shane.mathack.util.expression.Expression;
 
+import java.util.concurrent.TimeUnit;
+
 import io.github.sidvenu.mathjaxview.MathJaxView;
 
 public class TaskSessionActivity extends AppCompatActivity {
@@ -27,7 +29,7 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private MathJaxView mTaskTextView;
     private TextView mScoreTextView;
-    private EditText mUIEditText;
+    private EditText mInputEditText;
 
     private String mAnswer;
 
@@ -51,66 +53,70 @@ public class TaskSessionActivity extends AppCompatActivity {
         }
 
         initViews();
-        mTaskTextView.setText(ltx);
-        //mTaskTextView.setBackgroundColor(getResources().getColor(R.color.mathack_background));
-        //mTaskTextView.setLatex("x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}");
-        //mTaskTextView.setTextColor(Color.rgb(0, 0, 0));
+
+       //mTaskTextView.setText(ltx);
         setTitle("Training");
-//
-//        final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
-//
-//        updateTask();
-//
-//        mUIEditText.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//                if (editable.toString().equals(mAnswer)) {
-//                    editable.clear();
-//
-//                    if (dingSound.isPlaying()) {
-//                        dingSound.seekTo(0);
-//                    } else {
-//                        dingSound.start();
-//                    }
-//
-//                    ++mScore;
-//                    mScoreTextView.setText(Long.toString(mScore));
-//                    updateTask();
-//
-//                    if (mScore == mMaxScore) {
-//                        Intent intent = new Intent(TaskSessionActivity.this, TaskHistoryActivity.class);
-//                        mScore = 0;
-//                        startActivity(intent);
-//                        TaskSessionActivity.this.finish();
-//                    }
-//                }
-//            }
-//        });
+        final MediaPlayer dingSound = MediaPlayer.create(this, R.raw.ding);
+
+        updateTask();
+
+        mInputEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().equals(mAnswer)) {
+                    editable.clear();
+
+                    if (dingSound.isPlaying()) {
+                        dingSound.seekTo(0);
+                    } else {
+                        dingSound.start();
+                    }
+
+                    ++mScore;
+                    mScoreTextView.setText(Long.toString(mScore));
+                    updateTask();
+
+                    if (mScore == mMaxScore) {
+                        Intent intent = new Intent(TaskSessionActivity.this, TaskHistoryActivity.class);
+                        mScore = 0;
+                        startActivity(intent);
+                        TaskSessionActivity.this.finish();
+                    }
+                }
+            }
+        });
     }
-//
+
     private void initViews() {
-        mTaskTextView = (MathJaxView) findViewById(R.id.mTaskTextView);
-        mUIEditText = findViewById(R.id.mUIEditText);
-        //mScoreTextView= findViewById(R.id.mScoreTextView);
+        mScoreTextView= (TextView) findViewById(R.id.scoreTextView);
+        mTaskTextView = (MathJaxView) findViewById(R.id.taskTextView);
+        mInputEditText = (EditText) findViewById(R.id.inputEditText);
     }
-//
-//    private void updateTask() {
-//        Expression word = new Expression(mDepth, 1000);
-//        mTaskTextView.setText(word.toString());
-//
-//        mAnswer = Integer.toString(word.evaluate());
-//        System.out.println(mAnswer);
-//
-//        DataHolder.addData(word);
-//    }
+
+    private void updateTask() {
+        Expression word = new Expression(mDepth, 1000);
+        mTaskTextView.setText(String.format("$$\\color{white}{\\large %s}$$",word.toString()));
+        mTaskTextView.setAlpha(0.0f);
+
+
+        //try out
+        try {
+            Thread.sleep(1000);
+        }
+        catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+        mTaskTextView.setAlpha(1.0f);
+
+        mAnswer = Integer.toString(word.evaluate());
+        System.out.println(mAnswer);
+
+        DataHolder.addData(word);
+    }
 }
