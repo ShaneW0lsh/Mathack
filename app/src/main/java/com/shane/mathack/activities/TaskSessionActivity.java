@@ -24,7 +24,7 @@ public class TaskSessionActivity extends AppCompatActivity {
     String colr = "white";
     String expr = "ax^2+bx+c=0";
     String sz = "huge";
-    String ltx = String.format("$$\\color{%s}{\\%s %s}$$", colr, sz, expr);
+    //String ltx = String.format("$$\\color{%s}{\\%s %s}$$", colr, sz, expr);
 
     private MathView mTaskTextView;
     private TextView mScoreTextView;
