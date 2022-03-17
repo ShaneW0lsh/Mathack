@@ -39,7 +39,11 @@ public class PlayFragment extends Fragment {
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), TaskSessionActivity.class);
+//                Intent intent = new Intent(getActivity(), TaskSessionActivity.class);
+//                startActivity(intent);
+                String depthStr = mDepthEditText.getText().toString(),
+                        constraintStr = mConstrEditText.getText().toString();
+                Intent intent = TaskSessionActivity.newIntent(getActivity(), depthStr, constraintStr);
                 startActivity(intent);
             }
         });
