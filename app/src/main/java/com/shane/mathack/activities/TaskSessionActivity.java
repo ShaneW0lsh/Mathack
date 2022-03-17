@@ -1,5 +1,6 @@
 package com.shane.mathack.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -21,6 +22,12 @@ import io.github.kexanie.library.MathView;
 
 public class TaskSessionActivity extends AppCompatActivity {
 
+    private static final String EXTRA_TREE_DEPTH =
+            "com.shane.mathack.tree_depth";
+
+    private static final String EXTRA_CONSTRAINT =
+            "com.shane.mathack.constraint";
+
     String colr = "white";
     String expr = "ax^2+bx+c=0";
     String sz = "huge";
@@ -33,6 +40,8 @@ public class TaskSessionActivity extends AppCompatActivity {
     private String mAnswer;
 
     private long mScore = 0;
+
+    final private int mMaxAns;
     final private long mMaxScore = DataHolder.getNumOfTasks();
     final private int mDepth = DataHolder.getDepth();
 
@@ -89,6 +98,13 @@ public class TaskSessionActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public Intent newIntent(Context packageContext, int depth, int constraint) {
+        Intent retIntent = new Intent(packageContext, TaskSessionActivity.class);
+        retIntent.putExtra(EXTRA_TREE_DEPTH, depth);
+        retIntent.putExtra(EXTRA_CONSTRAINT, constraint);
+        return retIntent;
     }
 
     private void initViews() {
