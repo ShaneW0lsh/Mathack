@@ -100,7 +100,7 @@ public class TaskSessionActivity extends AppCompatActivity {
         });
     }
 
-    public Intent newIntent(Context packageContext, int depth, int constraint) {
+    public static Intent newIntent(Context packageContext, int depth, int constraint) {
         Intent retIntent = new Intent(packageContext, TaskSessionActivity.class);
         retIntent.putExtra(EXTRA_TREE_DEPTH, depth);
         retIntent.putExtra(EXTRA_CONSTRAINT, constraint);
