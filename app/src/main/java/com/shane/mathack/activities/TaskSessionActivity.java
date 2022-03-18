@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.shane.mathack.R;
 import com.shane.mathack.util.DataHolder;
+import com.shane.mathack.util.OperatorWrapper;
 import com.shane.mathack.util.expression.Expression;
 
 
@@ -27,6 +28,9 @@ public class TaskSessionActivity extends AppCompatActivity {
 
     private static final String EXTRA_CONSTRAINT =
             "com.shane.mathack.constraint";
+
+    private static final String EXTRA_OPERATORS =
+            "com.shane.mathack.operators";
 
     String colr = "white";
     String expr = "ax^2+bx+c=0";
@@ -112,10 +116,11 @@ public class TaskSessionActivity extends AppCompatActivity {
         return false;
     }
 
-    public static Intent newIntent(Context packageContext, String depth, String constraint) {
+    public static Intent newIntent(Context packageContext, String depth, String constraint, OperatorWrapper operatorWrapper) {
         Intent retIntent = new Intent(packageContext, TaskSessionActivity.class);
         retIntent.putExtra(EXTRA_TREE_DEPTH, depth);
         retIntent.putExtra(EXTRA_CONSTRAINT, constraint);
+        retIntent.putExtra(EXTRA_OPERATORS, operatorWrapper);
         return retIntent;
     }
 
