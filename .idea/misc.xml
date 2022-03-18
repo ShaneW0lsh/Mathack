@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/calculator_variant.xml" value="0.1555" />
+        <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_arm.xml" value="0.198" />
+        <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_calculator.xml" value="0.198" />
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_clear.xml" value="0.1695" />
+        <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_delet.xml" value="0.1925" />
+        <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_delete.xml" value="0.1925" />
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_history.xml" value="0.157" />
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_learn.xml" value="0.1295" />
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/drawable-anydpi/ic_more.xml" value="0.1295" />
@@ -17,7 +22,7 @@
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/layout/fragment_more.xml" value="0.3697916666666667" />
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/layout/fragment_play.xml" value="0.3697916666666667" />
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/layout/fragment_settings.xml" value="0.3697916666666667" />
-        <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3697916666666667" />
+        <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="..\:/Danil/AndroidProjects/Mathack/app/src/main/res/menu/toolbar_menu.xml" value="0.3697916666666667" />
       </map>
     </option>

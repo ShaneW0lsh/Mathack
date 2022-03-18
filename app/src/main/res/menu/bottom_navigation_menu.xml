@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+      android:id="@+id/navigation_play"
+      android:icon="@drawable/ic_calculator"
+      android:title="@string/play_nav_button"/>
+
   <item
       android:id="@+id/navigation_history"
       android:icon="@drawable/ic_history"
       android:title="@string/history_nav_button"/>
-
-  <item
-      android:id="@+id/navigation_play"
-      android:icon="@drawable/ic_play"
-      android:title="@string/play_nav_button"/>
 
   <item
       android:id="@+id/navigation_learn"
