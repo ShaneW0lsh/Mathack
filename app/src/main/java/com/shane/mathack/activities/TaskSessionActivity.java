@@ -50,8 +50,10 @@ public class TaskSessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_session);
 
-        mMaxAns = getIntent().getStringExtra(EXTRA_CONSTRAINT);
-        mDepth = getIntent().getStringExtra(EXTRA_TREE_DEPTH);
+        String intentConstraint = getIntent().getStringExtra(EXTRA_CONSTRAINT);
+        String intentDepth = getIntent().getStringExtra(EXTRA_TREE_DEPTH);
+        mMaxAns = isNull(intentConstraint) ? "50" : intentConstraint;
+        mDepth = isNull(intentDepth) ? "2" : intentDepth;
 
         //detect which theme is currently on
         switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
@@ -103,6 +105,13 @@ public class TaskSessionActivity extends AppCompatActivity {
         });
     }
 
+    private boolean isNull(String intentConstraint) {
+        if (intentConstraint == null || intentConstraint.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
     public static Intent newIntent(Context packageContext, String depth, String constraint) {
         Intent retIntent = new Intent(packageContext, TaskSessionActivity.class);
         retIntent.putExtra(EXTRA_TREE_DEPTH, depth);
@@ -117,7 +126,8 @@ public class TaskSessionActivity extends AppCompatActivity {
     }
 
     private void updateTask() {
-        Expression word = new Expression(Integer.getInteger(mDepth), Integer.getInteger(mMaxAns));
+        System.out.println(String.format("%s; %s", mDepth, mMaxAns));
+        Expression word = new Expression(Integer.valueOf(mDepth), Integer.valueOf(mMaxAns));
         mTaskTextView.setText(String.format("$$\\color{white}{\\LARGE %s}$$",
                               word.toString()));
 
