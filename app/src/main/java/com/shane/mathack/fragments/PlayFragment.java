@@ -10,12 +10,13 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.shane.mathack.R;
 import com.shane.mathack.activities.TaskSessionActivity;
 
 public class PlayFragment extends Fragment {
 
-    Button mStartButton;
+    FloatingActionButton mStartFab;
     EditText mDepthEditText, mConstrEditText;
 
     @Override
@@ -30,22 +31,21 @@ public class PlayFragment extends Fragment {
     }
 
     private void initViews() {
-        mStartButton = (Button) getView().findViewById(R.id.start_button);
+        mStartFab = (FloatingActionButton) getView().findViewById(R.id.extended_fab_start);
         mDepthEditText = (EditText) getView().findViewById(R.id.depthEditText);
         mConstrEditText = (EditText) getView().findViewById(R.id.consrEditText);
     }
 
     private void manageListeners() {
-        mStartButton.setOnClickListener(new View.OnClickListener() {
+        mStartFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                // get an array of all checked check boxes
-
                 String depthStr = mDepthEditText.getText().toString(),
                         constraintStr = mConstrEditText.getText().toString();
-//                Intent intent = TaskSessionActivity.newIntent(getActivity(), depthStr, constraintStr);
-//                startActivity(intent);
+                Intent intent = TaskSessionActivity.newIntent(getActivity(), depthStr, constraintStr);
+                startActivity(intent);
+
+                // For the other new intent get an array of all activated operators using checkboxes
             }
         });
     }
