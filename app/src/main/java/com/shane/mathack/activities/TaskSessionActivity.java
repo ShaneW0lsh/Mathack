@@ -124,6 +124,13 @@ public class TaskSessionActivity extends AppCompatActivity {
         return retIntent;
     }
 
+    public static Intent newIntent(Context packageContext, String depth, String constraint) {
+        Intent retIntent = new Intent(packageContext, TaskSessionActivity.class);
+        retIntent.putExtra(EXTRA_TREE_DEPTH, depth);
+        retIntent.putExtra(EXTRA_CONSTRAINT, constraint);
+        return retIntent;
+    }
+
     private void initViews() {
         mScoreTextView= (TextView) findViewById(R.id.scoreTextView);
         mTaskTextView = (MathView) findViewById(R.id.taskTextView);
