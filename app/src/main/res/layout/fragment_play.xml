@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="150dp"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/depthEditText"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:minWidth="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:hint="Recursion depth"
-        android:layout_gravity="center_horizontal"
-
-        android:layout_marginBottom="10dp"/>
+        android:minWidth="160dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/consrEditText"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:minWidth="160dp"
-        android:layout_marginBottom="200dp"
-        android:layout_gravity="center_horizontal"
-        android:hint="Answer constraint"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Answer constraint"
         android:minWidth="160dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Start training"
-        android:textSize="18dp"/>
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/depthEditText" />
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/extended_fab_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/start_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:minWidth="160dp"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:text="Start training"-->
+<!--        android:textSize="18dp"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
